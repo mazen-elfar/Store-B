@@ -9,7 +9,7 @@ import axios from 'axios';
  * - Error interceptor for auth failures
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://store-b-backend.onrender.com';
 
 const axiosInstance = axios.create({
     baseURL: API_BASE_URL,

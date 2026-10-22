@@ -27,7 +27,8 @@ const Login = () => {
         if (result.success) {
             if (result.role === 'admin') {
                 console.log('Admin logged in successfully');
-                window.location.href = `https://store-b-dashboard-production.up.railway.app/login?token=${result.token}&role=${result.role}`;
+                const dashboardBase = (import.meta.env.VITE_ADMIN_DASHBOARD_URL || 'https://store-b-dashboard-zkdh.vercel.app').replace(/\/login\/?$/, '');
+                window.location.href = `${dashboardBase}/login?token=${result.token}&role=${result.role}`;
             } else {
                 navigate('/');
             }
