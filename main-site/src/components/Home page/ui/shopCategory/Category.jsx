@@ -32,7 +32,8 @@ const Category = () => {
     const getImageUrl = (image) => {
         if (!image) return null
         if (image.startsWith('http') || image.startsWith('data:')) return image
-        return `${API_BASE_URL}/${image}`
+        const rootUrl = API_BASE_URL.replace(/\/api\/?$/, '')
+        return `${rootUrl}/${image.startsWith('/') ? image.slice(1) : image}`
     }
 
     const scroll = (dir) => {

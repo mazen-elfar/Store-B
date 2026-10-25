@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 /**
  * Axios instance configured for Google OAuth authentication
@@ -8,8 +9,6 @@ import axios from 'axios';
  * - Automatic base URL configuration
  * - Error interceptor for auth failures
  */
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://store-b-backend.onrender.com';
 
 const axiosInstance = axios.create({
     baseURL: API_BASE_URL,
